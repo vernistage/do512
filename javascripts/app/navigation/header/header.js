@@ -22,7 +22,13 @@ define(function (require) {
             // Trigger for updating title
             stateEvents.on("update:title", function(title) {
                 document.title = 'DoStuff | ' + title;
-                // Add Nav Highlight
+
+                this.$el
+                    .find('.active')
+                    .removeClass('active')
+                    .end()
+                    .find('.nav-' + title.replace(/\s+/g, '-').toLowerCase())
+                    .addClass('active');
             }, this);
 
             this.render();
