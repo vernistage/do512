@@ -19,11 +19,9 @@ define(function (require) {
         className: 'navbar navbar-default navbar-fixed-top',
 
         initialize: function() {
-            var $pageTitle = $('.page-title');
-
             // Trigger for updating title
             stateEvents.on("update:title", function(title) {
-                $pageTitle.html(title);
+                document.title = 'DoStuff | ' + title;
                 // Add Nav Highlight
             }, this);
 
