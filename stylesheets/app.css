@@ -6,3 +6,14 @@ body {
 .content {
 	margin-top: 50px;
 }
+
+.jumbotron {
+	background-color: transparent;
+}
+.jumbotron img {
+	width: 100%;
+}
+
+.caption h3 {
+	text-align: center;
+}

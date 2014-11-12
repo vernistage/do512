@@ -15,9 +15,6 @@ define(function(require) {
     // SubViews
     var ThingView = require('app/who/thing');
 
-    // var tplThing = require('text!app/who/tpl/thing.html');
-    // var templateThing = _.template(tplThing);
-
     var frag = document.createDocumentFragment();
 	
 	return Backbone.View.extend({
@@ -30,7 +27,6 @@ define(function(require) {
 		},
 
 		render: function() {
-			this.$el.html(template());
 
 			Things.Collection.each(function(thing) {
 
@@ -42,7 +38,10 @@ define(function(require) {
 
 			}, this);
 
-			this.$el.append(frag);
+			this.$el
+				.html(template())
+				.find('.row')
+				.append(frag);
 			
 			return this;
 		}
