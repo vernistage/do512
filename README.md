@@ -11,10 +11,11 @@ Approximate time:
 
 Detailed instructions:
 -
-  1. Create a single page JS app using Backbone and Handlebars.
-  2. The app should have two routes: 1 displaying the first page of today's events and 1 displaying the first page of tomorrow's events.
-  3. You can fetch the data from http://do512.com/events/today.json and http://do512.com/events/tomorrow.json
-  3. Display the data using the wireframe in this repo as a guide.
+  1. Start by forking this repo and develop from within this repo
+  2. Create a single page JS app using Backbone and Handlebars
+  3. The app should have two routes: 1 displaying the first page of today's events and 1 displaying the first page of tomorrow's events
+  4. You can fetch the data from http://do512.com/events/today.json and http://do512.com/events/tomorrow.json
+  5. Display the data using the wireframe in this repo as a guide
     
 
 Deliverables:
