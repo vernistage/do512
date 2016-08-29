@@ -11,7 +11,7 @@ Approximate time:
 
 Detailed instructions:
 -
-  1. Start by forking this repo and develop from within this repo
+  1. Start by forking this repo
   2. Create a single page JS app using Backbone and Handlebars
   3. The app should have two routes: 1 displaying the first page of today's events and 1 displaying the first page of tomorrow's events
   4. You can fetch the data from http://do512.com/events/today.json and http://do512.com/events/tomorrow.json. Note: these endpoints support JSONP, simply add ?callback=NAME_OF_CALLBACK to your request
@@ -20,4 +20,4 @@ Detailed instructions:
 
 Deliverables:
 -
-  1. link to github repo with completed JS and HTML
+  1. link to forked github repo with completed JS and HTML
