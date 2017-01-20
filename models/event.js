@@ -5,6 +5,6 @@ EventModel = Backbone.Model.extend({
 });
 
 $(document).ready(function(){
-  var event = new EventModel({title: "best"})
-  alert("the event title is" + event.get(title) + "!")
+  var event = new EventModel({name: "best"});
+  alert("hello" + event.get("name"));
 });
