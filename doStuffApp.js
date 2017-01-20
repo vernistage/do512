@@ -1,9 +1,9 @@
 // Make json data into event objects
 var events = new event({
-  eventTitle: .title,
-  startTime: .time,
-  venue: .venue,
-  image: .image
+  eventTitle: this.title,
+  startTime: this.time,
+  venue: this.venue,
+  image: this.image
 })
 
 // driver code

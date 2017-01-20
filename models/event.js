@@ -1,13 +1,12 @@
 // Namespace the app
-var app = app || {};
+EventModel = Backbone.Model.extend({
 
-app.event = Backbone.Model.extend({
-
-  defaults:{
-    eventTitle: "TBD",
-    startTime: "TBD",
-    venue: "TBD",
-    image: null    
+  initialize: function(){
   }
 
+});
+
+$(document).ready(function(){
+  var event = new EventModel({title: "best"})
+  alert("the event titles is" + event.get(title) + "!")
 });
