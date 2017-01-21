@@ -1,22 +1,19 @@
 // Single Model
 
-EventModel = Backbone.Model.extend({
+var EventModel = Backbone.Model.extend({
   // defaults: {
   // }
 });
 
 var EventView = Backbone.View.extend({
   el: '#container',
-
   initialize: function(){
     this.render();
   },
-
   render: function(){
     this.$el.append(this.model.toJSON().title)
     console.log(this.model.toJSON().title)
   }
-
 });
 
 // Collections
@@ -24,10 +21,6 @@ var EventView = Backbone.View.extend({
 TodayCollection = Backbone.Collection.extend({
   model: EventModel,
   url: "http://do512.com/events/today.json",
-  // sync: function(method, collection, options) {
-  //   options.dataType = "jsonp";
-  //   return Backbone.sync(method, collection, options);
-  // },
   parse: function(response) {
     return response.events;
   }
