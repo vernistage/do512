@@ -21,12 +21,10 @@
   </head>
 
   <body>
-    Hello
+    <h2>Today's Events</h2>
     <div id="eventData"></div>
     <!-- Handlebars -->
     <script id='eventsTemplate' type="text/x-handlebars-template">
-
-      <h2>debugs</h2>
       {{#each events}}
         <p>{{this.title}}</p>
       {{/each}}

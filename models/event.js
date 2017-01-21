@@ -3,20 +3,6 @@
 var EventModel = Backbone.Model.extend({
 });
 
-var EventView = Backbone.View.extend({
-  el: '#container',
-  initialize: function(){
-    this.render();
-  },
-  render: function(){
-    // console.log(this.model.toJSON())
-    // var js = this.model.toJSON();
-    //  var template = Handlebars.compile($("#eventsTemplate").html());
-    //  $(this.el).html(template({events: js}));
-    //   return this;
-  }
-});
-
 // Collections
 
 TodayCollection = Backbone.Collection.extend({
@@ -44,12 +30,8 @@ var TodayView = Backbone.View.extend({
   render: function(){
     var theHtml = document.getElementById("eventsTemplate").innerHTML;
     var template = Handlebars.compile(theHtml);
-     var eventData = (template({events: this.collection}));
+    var eventData = (template({events: this.collection}));
     document.getElementById("eventData").innerHTML += eventData
-    // for (var index in this.collection) {
-    //   var test = new EventModel(this.collection[index])
-    //   var view = new EventView({model: test});
-    // }
   }
 })
 
