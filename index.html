@@ -22,12 +22,14 @@
 
   <body>
     Hello
-    <div id="container">
-    </div>
-
+    <div id="eventData"></div>
     <!-- Handlebars -->
-    <script type="text/x-handlebars-template">
-      
+    <script id='eventsTemplate' type="text/x-handlebars-template">
+
+      <h2>debugs</h2>
+      {{#each events}}
+        <p>{{this.title}}</p>
+      {{/each}}
     </script>
 
   </body>
