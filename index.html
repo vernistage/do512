@@ -46,18 +46,30 @@
     <div class="ui attached segment" style="border-style:none;">
       <div id="eventData"></div>
       <script id='eventsTemplate' type="text/x-handlebars-template">
-        {{#each events}}
-          <p>{{this.title}}</p>
-        {{/each}}
+        <div class="ui relaxed grid">
+          <div class="three column row">
+            {{#each events}}
+              <div class="column">
+                {{this.title}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
       </script>
     </div>
     <!-- Tomorrow -->
     <div class="ui attached segment" style="border-style:none;">
       <div id="tomData"></div>
       <script id='tomTemplate' type="text/x-handlebars-template">
-        {{#each events}}
-          <p>{{this.title}}</p>
-        {{/each}}
+        <div class="ui relaxed grid">
+          <div class="three column row">
+            {{#each events}}
+              <div class="column">
+                {{this.title}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
       </script>
     </div>
   </body>
