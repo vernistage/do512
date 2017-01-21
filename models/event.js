@@ -15,7 +15,10 @@ TodayCollection = Backbone.Collection.extend({
 
 TomorrowCollection = Backbone.Collection.extend({
   model: EventModel,
-  url: "http://do512.com/events/tomorrow.json"
+  url: "http://do512.com/events/tomorrow.json",
+  parse: function(response) {
+    return response.events;
+  }
 });
 
 // Collection Views
