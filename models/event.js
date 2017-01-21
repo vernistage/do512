@@ -13,7 +13,8 @@ var EventView = Backbone.View.extend({
   },
 
   render: function(){
-    this.$el.html(this.model.toJSON().title)
+    this.$el.append(this.model.toJSON().title)
+    console.log(this.model.toJSON().title)
   }
 
 });
