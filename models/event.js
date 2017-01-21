@@ -18,6 +18,8 @@ TomorrowCollection = Backbone.Collection.extend({
   url: "http://do512.com/events/tomorrow.json"
 });
 
+// Collection Views
+
 var TodayView = Backbone.View.extend({
   el: '#eventsTemplate',
   collection: TodayCollection,
