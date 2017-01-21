@@ -31,20 +31,30 @@
       </div>
     </div>
 
-    <div class="ui top attached menu">
-      <h2>Today's Events</h2>
-      <a class="right aligned item">
+    <div class="ui top attached borderless menu">
+      <div class="header item">
+        Today's Events
+      </div>
+      <a id="today" class="right aligned item">
         Today
       </a>
-      <a class="item">
+      <a id="tomorrow" class="item">
         Tomorrow
       </a>
     </div>
+    <!-- Today -->
     <div class="ui attached segment">
-
       <div id="eventData"></div>
-      <!-- Handlebars -->
       <script id='eventsTemplate' type="text/x-handlebars-template">
+        {{#each events}}
+          <p>{{this.title}}</p>
+        {{/each}}
+      </script>
+    </div>
+    <!-- Tomorrow -->
+    <div class="ui attached segment">
+      <div id="tomData"></div>
+      <script id='tomTemplate' type="text/x-handlebars-template">
         {{#each events}}
           <p>{{this.title}}</p>
         {{/each}}
