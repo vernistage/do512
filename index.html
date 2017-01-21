@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="ui top attached borderless menu">
+    <div class="ui top attached menu" style="border-style:none;">
       <div class="header item">
         Today's Events
       </div>
@@ -43,7 +43,7 @@
       </a>
     </div>
     <!-- Today -->
-    <div class="ui attached segment">
+    <div class="ui attached segment" style="border-style:none;">
       <div id="eventData"></div>
       <script id='eventsTemplate' type="text/x-handlebars-template">
         {{#each events}}
@@ -52,7 +52,7 @@
       </script>
     </div>
     <!-- Tomorrow -->
-    <div class="ui attached segment">
+    <div class="ui attached segment" style="border-style:none;">
       <div id="tomData"></div>
       <script id='tomTemplate' type="text/x-handlebars-template">
         {{#each events}}
