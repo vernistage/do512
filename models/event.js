@@ -21,9 +21,12 @@ var EventView = Backbone.View.extend({
 TodayCollection = Backbone.Collection.extend({
   model: EventModel,
   url: "http://do512.com/events/today.json",
-  sync : function(method, collection, options) {
-    options.dataType = "jsonp";
-    return Backbone.sync(method, collection, options);
+  // sync: function(method, collection, options) {
+  //   options.dataType = "jsonp";
+  //   return Backbone.sync(method, collection, options);
+  // },
+  parse: function(response) {
+    return response.events;
   }
 });
 
@@ -42,7 +45,10 @@ var TodayView = Backbone.View.extend({
   },
 
   render: function(){
-    console.log(this);
+    for (var index in this.collection) {
+      console.log( this.collection[index] );
+      // var eventView = new EventView({model: event});
+    }
   }
 })
 
@@ -50,19 +56,18 @@ var TodayView = Backbone.View.extend({
 
 $(document).ready(function(){
   var todays_events = new TodayCollection();
-  var data
   todays_events.fetch({
-    dataType: 'jsonp',
+    dataType: 'json',
     success: function(collection, response, options){
-      data = response.events;
+      var eventer = new TodayView({collection: collection.parse(response, options)});
     }
   })
   var tomorrows_events = new TomorrowCollection();
   tomorrows_events.fetch({
-    dataType: 'jsonp'
+    dataType: 'json'
   })
 
   var test = new EventModel({title: "bonjour"})
   var view = new EventView({model: test})
-  var eventer = new TodayView({collection: data});
+
 });
