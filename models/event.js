@@ -18,4 +18,5 @@ $(document).ready(function(){
   var event = new EventModel();
   var today_events = new EventCollection([]);
   var tom_events = new EventCollection([]);
+  console.log(today_events.size())
 });
