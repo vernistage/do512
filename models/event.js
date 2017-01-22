@@ -82,3 +82,10 @@ $(document).ready(function(){
   });
 
 });
+
+// Helpers
+
+Handlebars.registerHelper('dateFormat', function(context, block) {
+
+    return moment(context).format("h:mm a");
+});
