@@ -1,9 +1,5 @@
-// Single Model
-
 var EventModel = Backbone.Model.extend({
 });
-
-// Collections
 
 TodayCollection = Backbone.Collection.extend({
   model: EventModel,
@@ -12,7 +8,6 @@ TodayCollection = Backbone.Collection.extend({
     return response.events;
   }
 });
-
 TomorrowCollection = Backbone.Collection.extend({
   model: EventModel,
   url: "http://do512.com/events/tomorrow.json",
@@ -20,9 +15,6 @@ TomorrowCollection = Backbone.Collection.extend({
     return response.events;
   }
 });
-
-// Collection Views
-
 var TodayView = Backbone.View.extend({
   el: '#eventsTemplate',
   collection: TodayCollection,
@@ -37,7 +29,6 @@ var TodayView = Backbone.View.extend({
     document.getElementById("eventData").innerHTML += eventData
   }
 })
-
 var TomView = Backbone.View.extend({
   el: '#tomTemplate',
   collection: TomorrowCollection,
@@ -52,9 +43,6 @@ var TomView = Backbone.View.extend({
     document.getElementById("tomData").innerHTML += data
   }
 })
-
-// Driver code
-
 $(document).ready(function(){
   var todays_events = new TodayCollection();
   todays_events.fetch({
@@ -63,12 +51,10 @@ $(document).ready(function(){
       var eventer = new TodayView({collection: collection.parse(response, options)});
     }
   })
-
   $('#today').click(function(){
     $("#tomData").hide()
     $("#eventData").show()
   });
-
   $('#tomorrow').click(function(){
     $("#eventData").hide()
     $("#tomData").show()
@@ -80,12 +66,8 @@ $(document).ready(function(){
       }
     })
   });
-
 });
-
 // Helpers
-
 Handlebars.registerHelper('dateFormat', function(context, block) {
-
-    return moment(context).format("h:mm a");
+  return moment(context).format("h:mm a");
 });
