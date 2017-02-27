@@ -46,7 +46,7 @@ var TomView = Backbone.View.extend({
 $(document).ready(function(){
   var todays_events = new TodayCollection();
   todays_events.fetch({
-    dataType: 'json',
+    dataType: 'jsonp',
     success: function(collection, response, options){
       var eventer = new TodayView({collection: collection.parse(response, options)});
     }
@@ -60,7 +60,7 @@ $(document).ready(function(){
     $("#tomData").show()
     var tomorrows_events = new TomorrowCollection();
     tomorrows_events.fetch({
-      dataType: 'json',
+      dataType: 'jsonp',
       success: function(collection, response, options){
         var eventer = new TomView({collection: collection.parse(response, options)});
       }
